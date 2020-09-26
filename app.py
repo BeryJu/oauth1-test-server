@@ -14,7 +14,6 @@ logger.addHandler(logging.StreamHandler())
 logger.setLevel(logging.DEBUG)
 
 app = Flask(__name__, template_folder="templates")
-app.debug = True
 app.secret_key = "secret"
 app.config.update(
     {
@@ -278,6 +277,10 @@ def me():
         name=user.name,
     )
 
+
+@app.route("/api/health")
+def health():
+    return ""
 
 if __name__ == "__main__":
     db.create_all()

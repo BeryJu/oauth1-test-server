@@ -23,6 +23,7 @@ By default, a user with the Username `example-user` is created.
 - `/oauth/access_token`: Access Token endpoint, accepts both GET and POST
 - `/oauth/authorize`: Authorize endpoint
 - `/api/me`: Returns User information
+- `/api/health`: Healthcheck URL
 
 ## Running
 

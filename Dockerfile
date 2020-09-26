@@ -11,12 +11,20 @@ RUN pip install pipenv && \
 
 FROM python:3.8-slim-buster
 
-COPY . /app
+WORKDIR /app
+
 COPY --from=locker /app/requirements.txt /app
 COPY --from=locker /app/requirements-dev.txt /app
 
-RUN pip install --no-cache-dir -r /app/requirements.txt
+RUN apt-get update && \
+    apt-get install -y wget && \
+    apt-get clean && \
+    pip install --no-cache-dir -r /app/requirements.txt
+
+COPY . /app
 
 EXPOSE 5000
+
+HEALTHCHECK CMD [ "wget", "--spider", "http://localhost:5000/api/health" ]
 
 CMD [ "python", "/app/app.py" ]
