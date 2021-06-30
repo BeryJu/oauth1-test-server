@@ -9,6 +9,3 @@ verify_ssl = true
 flask = "*"
 flask-sqlalchemy = "*"
 flask-oauthlib = "*"
-
-[requires]
-python_version = "3.9"
