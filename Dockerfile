@@ -1,4 +1,4 @@
-FROM python:3.10.5-slim-buster as locker
+FROM python:3.10.6-slim-buster as locker
 
 COPY ./Pipfile /app/
 COPY ./Pipfile.lock /app/
@@ -9,7 +9,7 @@ RUN pip install pipenv && \
     pipenv lock -r > requirements.txt && \
     pipenv lock -rd > requirements-dev.txt
 
-FROM python:3.10.5-slim-buster
+FROM python:3.10.6-slim-buster
 
 WORKDIR /app
 
