@@ -1,20 +1,19 @@
-FROM python:3.10.6-slim-buster as locker
+FROM docker.io/python:3.10.7-slim AS poetry-locker
 
-COPY ./Pipfile /app/
-COPY ./Pipfile.lock /app/
+WORKDIR /work
+COPY ./pyproject.toml /work
+COPY ./poetry.lock /work
 
-WORKDIR /app/
+RUN pip install --no-cache-dir poetry && \
+    poetry export -f requirements.txt --output requirements.txt && \
+    poetry export -f requirements.txt --dev --output requirements-dev.txt
 
-RUN pip install pipenv && \
-    pipenv lock -r > requirements.txt && \
-    pipenv lock -rd > requirements-dev.txt
-
-FROM python:3.10.6-slim-buster
+FROM docker.io/python:3.10.7-slim
 
 WORKDIR /app
 
-COPY --from=locker /app/requirements.txt /app
-COPY --from=locker /app/requirements-dev.txt /app
+COPY --from=poetry-locker /work/requirements.txt /app
+COPY --from=poetry-locker /work/requirements-dev.txt /app
 
 RUN apt-get update && \
     apt-get install -y wget && \

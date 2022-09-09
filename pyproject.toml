@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "oauth1-test-server"
+version = "0.1.0"
+description = ""
+authors = ["Jens Langhammer <jens.langhammer@beryju.org>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Flask = "^2.2.2"
+Flask-SQLAlchemy = "^2.5.1"
+Flask-OAuthlib = "^0.9.6"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
