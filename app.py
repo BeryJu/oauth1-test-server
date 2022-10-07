@@ -1,20 +1,18 @@
+import logging
 from os import getenv
-from flask import Flask
-from flask import session, request
-from flask import render_template, redirect
-from flask import jsonify
+from uuid import uuid4
+
+from flask import Flask, jsonify, redirect, render_template, request, session
+from flask_oauthlib.provider import OAuth1Provider
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import gen_salt
-from flask_oauthlib.provider import OAuth1Provider
-
-import logging
 
 logger = logging.getLogger("flask_oauthlib")
 logger.addHandler(logging.StreamHandler())
 logger.setLevel(logging.DEBUG)
 
 app = Flask(__name__, template_folder="templates")
-app.secret_key = "secret"
+app.secret_key = str(uuid4())
 app.config.update(
     {
         "SQLALCHEMY_DATABASE_URI": "sqlite:///:memory:",
@@ -282,15 +280,17 @@ def me():
 def health():
     return ""
 
+
 if __name__ == "__main__":
-    db.create_all()
-    client = Client(
-        client_key=getenv("OAUTH1_CLIENT_ID"),
-        client_secret=getenv("OAUTH1_CLIENT_SECRET"),
-        _redirect_uris=getenv("OAUTH1_REDIRECT_URI"),
-    )
-    user = User(username="example-user", email="foo@example.com", name="test name")
-    db.session.add(user)
-    db.session.add(client)
-    db.session.commit()
+    with app.app_context():
+        db.create_all()
+        client = Client(
+            client_key=getenv("OAUTH1_CLIENT_ID"),
+            client_secret=getenv("OAUTH1_CLIENT_SECRET"),
+            _redirect_uris=getenv("OAUTH1_REDIRECT_URI"),
+        )
+        user = User(username="example-user", email="foo@example.com", name="test name")
+        db.session.add(user)
+        db.session.add(client)
+        db.session.commit()
     app.run(host="0.0.0.0")
