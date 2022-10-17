@@ -78,7 +78,7 @@ requests-oauthlib = ">=0.6.2,<1.2.0"
 
 [[package]]
 name = "flask-sqlalchemy"
-version = "3.0.1"
+version = "3.0.2"
 description = "Add SQLAlchemy support to your Flask application."
 category = "main"
 optional = false
@@ -246,7 +246,7 @@ watchdog = ["watchdog"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "a5437ec100c20eb9deea82ef9038375dbd2b4a7b2988cfdd6bc41beda98ad495"
+content-hash = "e0e8d09bfb19f28bed03dcd4c43283c7aec75932cc8ac8ce382bc5724285a748"
 
 [metadata.files]
 cachelib = [
@@ -278,8 +278,8 @@ Flask-OAuthlib = [
     {file = "Flask_OAuthlib-0.9.6-py3-none-any.whl", hash = "sha256:a5c3b62959aa1922470a62b6ebf4273b75f1c29561a7eb4a69cde85d45a1d669"},
 ]
 flask-sqlalchemy = [
-    {file = "Flask-SQLAlchemy-3.0.1.tar.gz", hash = "sha256:0a5d586774949856e4f1fe8be3a64c594615959e39e2b041e887bac5c756bc42"},
-    {file = "Flask_SQLAlchemy-3.0.1-py3-none-any.whl", hash = "sha256:649eddf17ae18814f87f33eb26d9d7b37412ec7ee67985873b3cf882aca099f5"},
+    {file = "Flask-SQLAlchemy-3.0.2.tar.gz", hash = "sha256:16199f5b3ddfb69e0df2f52ae4c76aedbfec823462349dabb21a1b2e0a2b65e9"},
+    {file = "Flask_SQLAlchemy-3.0.2-py3-none-any.whl", hash = "sha256:7d0cd9cf73e64a996bb881a1ebd01633fc5a6d11c36ea27f7b5e251dc45476e7"},
 ]
 greenlet = [
     {file = "greenlet-1.1.3-cp27-cp27m-macosx_10_14_x86_64.whl", hash = "sha256:8c287ae7ac921dfde88b1c125bd9590b7ec3c900c2d3db5197f1286e144e712b"},
