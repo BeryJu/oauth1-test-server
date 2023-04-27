@@ -7,7 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-Flask = "^2.2.3"
+Flask = "^2.2.2"
 Flask-SQLAlchemy = "^3.0.3"
 Flask-OAuthlib = "^0.9.6"
 
