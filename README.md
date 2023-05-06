@@ -1,6 +1,6 @@
 # OAuth1 Test Server
 
-![GitHub branch checks state](https://img.shields.io/github/checks-status/beryju/oauth1-test-server/master?style=flat-square)
+![GitHub branch checks state](https://img.shields.io/github/checks-status/beryju/oauth1-test-server/main?style=flat-square)
 
 Based on https://flask-oauthlib.readthedocs.io/en/latest/oauth1.html and https://github.com/lepture/example-oauth1-server
 
