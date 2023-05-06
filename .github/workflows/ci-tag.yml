@@ -1,10 +1,9 @@
-name: ci-build
+name: ci-tag
 
 on:
   push:
-    branches: [master]
-  pull_request:
-    branches: [master]
+    tags:
+      - v*
 
 jobs:
   build:
@@ -24,6 +23,5 @@ jobs:
       - name: Build and push Docker images
         uses: docker/build-push-action@v4.0.0
         with:
-          tags: ghcr.io/beryju/oauth1-test-server:latest
-          push: ${{ github.ref == 'refs/heads/master' }}
+          tags: ghcr.io/beryju/oauth1-test-server:${{github.ref_name}}
           platforms: linux/amd64,linux/arm64
