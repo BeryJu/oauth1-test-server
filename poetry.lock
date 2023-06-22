@@ -113,13 +113,13 @@ requests-oauthlib = ">=0.6.2,<1.2.0"
 
 [[package]]
 name = "flask-sqlalchemy"
-version = "3.0.4"
+version = "3.0.5"
 description = "Add SQLAlchemy support to your Flask application."
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "flask_sqlalchemy-3.0.4-py3-none-any.whl", hash = "sha256:23d44ca566b02b0b5ee5b29d81b435079402ad73c116bf9918dbda5b03aa30ba"},
-    {file = "flask_sqlalchemy-3.0.4.tar.gz", hash = "sha256:b812bc7f1bbf5ff3041cbfa0428bb191bed2c342b7bed88c15d7ce01890bfd5d"},
+    {file = "flask_sqlalchemy-3.0.5-py3-none-any.whl", hash = "sha256:cabb6600ddd819a9f859f36515bb1bd8e7dbf30206cc679d2b081dff9e383283"},
+    {file = "flask_sqlalchemy-3.0.5.tar.gz", hash = "sha256:c5765e58ca145401b52106c0f46178569243c5da25556be2c231ecc60867c5b1"},
 ]
 
 [package.dependencies]
@@ -446,4 +446,4 @@ watchdog = ["watchdog (>=2.3)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "fed81a40fe08b9ae749641b0825f0720df7ca82c8fe518986cfa41eeb8645b5a"
+content-hash = "22472c381e91f2e03f2e17e7bd442421c81275a385bc74636adc11e10bd871f9"
