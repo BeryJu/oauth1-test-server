@@ -6,7 +6,7 @@ authors = ["Jens Langhammer <jens.langhammer@beryju.org>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "~3.12"
 Flask = "^3.0.0"
 Flask-SQLAlchemy = "^3.1.1"
 Flask-OAuthlib = "^0.9.6"
