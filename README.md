@@ -35,7 +35,7 @@ docke run -d --rm \
     -e OAUTH1_CLIENT_ID=2NVVBip7I5kfl0TwVmGzTphhC98kmXScpZaoz7ET \
     -e OAUTH1_CLIENT_SECRET=wXzb8tGqXNbBQ5juA0ZKuFAmSW7RwOw8uSbdE3MvbrI8wjcbGp \
     -e OAUTH1_REDIRECT_URI=http://localhost.... \
-    ghcr.io/beryju/oauth1-test-server
+    ghcr.io/beryju/oauth1-test-server:v1.1
 ```
 
 Or if you want to use docker-compose, use this in your `docker-compose.yaml`.
@@ -45,7 +45,7 @@ version: '3.5'
 
 services:
   oauth1-test-server:
-    image: ghcr.io/beryju/oauth1-test-server
+    image: ghcr.io/beryju/oauth1-test-server:v1.1
     ports:
       - 5000:5000
     environment:
