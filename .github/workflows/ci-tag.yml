@@ -21,7 +21,7 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and push Docker images
-        uses: docker/build-push-action@v6.12.0
+        uses: docker/build-push-action@v6.13.0
         with:
           tags: ghcr.io/beryju/oauth1-test-server:${{github.ref_name}}
           platforms: linux/amd64,linux/arm64
