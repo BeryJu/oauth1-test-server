@@ -1,4 +1,4 @@
-FROM docker.io/python:3.13.4-slim AS poetry-locker
+FROM docker.io/python:3.13.5-slim AS poetry-locker
 
 WORKDIR /work
 COPY ./pyproject.toml /work
@@ -8,7 +8,7 @@ RUN pip install --no-cache-dir poetry && \
     poetry export -f requirements.txt --output requirements.txt && \
     poetry export -f requirements.txt --dev --output requirements-dev.txt
 
-FROM docker.io/python:3.13.4-slim
+FROM docker.io/python:3.13.5-slim
 
 WORKDIR /app
 
